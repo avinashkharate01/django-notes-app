@@ -9,6 +9,8 @@ django:
 
   service:
     port: 8000
+    
+
 
 
 mysql:
@@ -36,4 +38,9 @@ nginx:
   service:
     type: NodePort
     port: 80
+    targetPort: 80
     nodePort: 31796
+
+  upstream:
+    host: notes-app-django
+    port: 8000
